@@ -1,0 +1,31 @@
+/* 기본 변수 설정: 화이트 테마 */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #007bff;
+  }
+  
+  /* 다크 테마 변수 재정의 */
+  body.dark {
+    --bg-color: #222222;
+    --text-color: #ffffff;
+    --accent-color: #00e0ff;
+  }
+  
+  /* 전역 스타일 */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    padding: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  h1 {
+    color: var(--accent-color);
+  }
+  
+  .theme-selector {
+    margin-bottom: 1rem;
+  }
+  
