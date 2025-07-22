@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>심플 웹 에디터</title>
+  <style>
+    #editor {
+      border: 1px solid #aaa;
+      padding: 10px;
+      min-height: 100px;
+    }
+    #result {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      white-space: pre-wrap;
+      background-color: #f9f9f9;
+    }
+    button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>심플 웹 에디터</h2>
+
+  <!-- 버튼 영역 -->
+  <div>
+    <button onclick="execCmd('bold')">굵게</button>
+    <button onclick="execCmd('italic')">기울임</button>
+    <button onclick="execCmd('underline')">밑줄</button>
+    <button onclick="saveHTML()">저장</button>
+  </div>
+
+  <!-- 에디터 영역 -->
+  <div id="editor" contenteditable="true" spellcheck="true">
+    여기에 문장을 입력하고 단어에 원하는 스타일을 적용해 보세요
+  </div>
+
+  <!-- 결과 영역 -->
+  <h4>저장된 HTML 결과</h4>
+  <div id="result"></div>
+
+  <!-- 동작 스크립트 -->
+  <script>
+    function execCmd(command) {
+      document.execCommand(command, false, null);
+    }
+
+    function saveHTML() {
+      const content = document.getElementById("editor").innerHTML;
+      document.getElementById("result").innerText = content;
+    }
+  </script>
+
+</body>
+</html>

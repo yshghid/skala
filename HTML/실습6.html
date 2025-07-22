@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>과일 선택</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #selectedResult {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>좋아하는 과일을 선택하세요 🍎🍌🍇</h2>
+
+  <select id="fruitSelect">
+    <option value="">-- 과일 선택 --</option>
+    <option value="사과">사과</option>
+    <option value="바나나">바나나</option>
+    <option value="포도">포도</option>
+    <option value="오렌지">오렌지</option>
+  </select>
+
+  <div id="selectedResult">선택된 과일: 없음</div>
+
+  <script>
+    const selectBox = document.getElementById('fruitSelect');
+    const result = document.getElementById('selectedResult');
+
+    selectBox.addEventListener('change', () => {
+      const value = selectBox.value;
+      result.textContent = value ? `선택된 과일: ${value}` : '선택된 과일: 없음';
+    });
+  </script>
+
+</body>
+</html>

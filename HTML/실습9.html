@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>홍길동의 프로필</title>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+    <h1>홍길동의 프로필 페이지</h1>
+  </header>
+
+  <!-- 자기소개 섹션 -->
+  <section>
+    <h2>자기소개</h2>
+    <p>안녕하세요! 저는 홍길동입니다. 25살이고, 컴퓨터공학을 전공하고 있습니다. 코딩, 등산, 음악 감상을 좋아해요.</p>
+    <img src="images/profile.jpg" alt="홍길동 사진" width="200">
+  </section>
+
+  <!-- 정보 목록 섹션 -->
+  <section>
+    <h2>좋아하는 것</h2>
+    <ul>
+      <li>자연 속 산책</li>
+      <li>웹 개발</li>
+      <li>재즈 음악</li>
+    </ul>
+  </section>
+
+  <!-- 기술 스택/경력 테이블 -->
+  <section>
+    <h2>기술 및 경험</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>기술</th>
+          <th>경험 년수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML/CSS</td>
+          <td>2년</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>1.5년</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>2년</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 외부 링크 -->
+  <section>
+    <h2>외부 링크</h2>
+    <p><a href="https://github.com/hong-gildong" target="_blank">GitHub</a></p>
+    <p><a href="https://hong-blog.tistory.com" target="_blank">개발 블로그</a></p>
+  </section>
+
+  <!-- (선택) 오디오 -->
+  <section>
+    <h2>좋아하는 음악</h2>
+    <audio controls>
+      <source src="media/bg-music.mp3" type="audio/mpeg">
+      브라우저가 오디오를 지원하지 않습니다.
+    </audio>
+  </section>
+
+  <!-- (선택) 비디오 -->
+  <section>
+    <h2>자기소개 영상</h2>
+    <video controls width="400">
+      <source src="media/intro.mp4" type="video/mp4">
+      브라우저가 비디오를 지원하지 않습니다.
+    </video>
+  </section>
+
+  <!-- (선택) 피드백 폼 -->
+  <section>
+    <h2>피드백</h2>
+    <form>
+      <label for="feedback">한 줄 응원 또는 질문:</label><br>
+      <textarea id="feedback" name="feedback" rows="4" cols="40" placeholder="여기에 작성해주세요."></textarea><br>
+      <button type="submit">전송</button>
+    </form>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© 2025 홍길동</p>
+  </footer>
+
+</body>
+</html>
