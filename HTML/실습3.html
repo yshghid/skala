@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>심플 웹 에디터</title>
   <style>
+    body {
+      font-family: sans-serif;
+      margin: 30px;
+    }
     #editor {
       border: 1px solid #aaa;
       padding: 10px;
@@ -13,11 +17,12 @@
       margin-top: 20px;
       border: 1px solid #ddd;
       padding: 10px;
-      white-space: pre-wrap;
       background-color: #f9f9f9;
     }
     button {
       margin-right: 5px;
+      padding: 6px 10px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -30,6 +35,9 @@
     <button onclick="execCmd('bold')">굵게</button>
     <button onclick="execCmd('italic')">기울임</button>
     <button onclick="execCmd('underline')">밑줄</button>
+    <button onclick="execCmd('foreColor', '#000000')">검정</button>
+    <button onclick="execCmd('foreColor', '#ff0000')">빨강</button>
+    <button onclick="execCmd('foreColor', '#0000ff')">파랑</button>
     <button onclick="saveHTML()">저장</button>
   </div>
 
@@ -44,13 +52,14 @@
 
   <!-- 동작 스크립트 -->
   <script>
-    function execCmd(command) {
-      document.execCommand(command, false, null);
+    function execCmd(command, value = null) {
+      document.execCommand(command, false, value);
     }
 
     function saveHTML() {
       const content = document.getElementById("editor").innerHTML;
-      document.getElementById("result").innerText = content;
+      document.getElementById("result").innerText = content;  // 텍스트 출력
+      // 태그 그대로 보이게 하려면 innerText → textContent 또는 innerHTML 사용 가능
     }
   </script>
 
