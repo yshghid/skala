@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>한글 이름 판별</title>
+</head>
+<body>
+  <h2>결과는 F12 → Console에서 확인</h2>
+
+  <script>
+    function isKoreanName(name) {
+      const regex = /^[가-힣]+$/;
+      return regex.test(name);
+    }
+
+    console.log(isKoreanName("홍길동")); // true
+    console.log(isKoreanName("Tom"));   // false
+  </script>
+</body>
+</html>
