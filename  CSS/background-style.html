@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>배경 속성</title>
+  <style>
+    /* 배경 색 적용 */
+    .bg-color {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+
+    /* 배경 이미지 적용 */
+    .bg-image {
+      width: 160px;
+      height: 120px;
+      background-image: url('./google_logo.png');
+    }
+
+    /* 배경 이미지 위치 조정 */
+    .bg-position {
+      width: 320px; /* 2배 크기 */
+      height: 240px;
+      border: 1px solid black;
+      background-image: url('images/coffee.jpg');
+      background-repeat: no-repeat;
+      background-position: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-color"></div>
+  <br />
+  <div class="bg-image"></div>
+  <br />
+  <div class="bg-position"></div>
+</body>
+</html>

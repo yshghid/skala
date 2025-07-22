@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform and Transition Example</title>
+  <style>
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 100px;
+      font-family: sans-serif;
+    }
+
+    .box-container {
+      text-align: center;
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      background-color: green;
+      border-radius: 10px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s, transform 0.5s;
+      margin: 0 auto 20px auto;
+    }
+
+    .box:hover {
+      background-color: yellow;
+      color: black;
+    }
+
+    button {
+      padding: 8px 20px;
+      background-color: dodgerblue;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .rotated {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 첫 번째 박스 -->
+    <div class="box-container">
+      <h2>Transform and Transition Example</h2>
+      <div class="box" id="box1">Hover me!</div>
+      <button onclick="rotateBox('box1')">Click Me!</button>
+    </div>
+
+    <!-- 두 번째 박스 -->
+    <div class="box-container">
+      <h2>Transform and Transition Example</h2>
+      <div class="box" id="box2">Hover me!</div>
+      <button onclick="rotateBox('box2')">Click Me!</button>
+    </div>
+  </div>
+
+  <script>
+    function rotateBox(id) {
+      const box = document.getElementById(id);
+      box.classList.toggle('rotated');
+    }
+  </script>
+</body>
+</html>
