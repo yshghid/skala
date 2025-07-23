@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>innerHTML vs textContent 실습</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+    .box {
+      border: 1px solid #000;
+      padding: 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>innerHTML 예제</h2>
+  <div id="html-div" class="box"></div>
+
+  <h2>textContent 예제</h2>
+  <div id="text-div" class="box"></div>
+
+  <script>
+    const htmlDiv = document.getElementById("html-div");
+    const textDiv = document.getElementById("text-div");
+
+    const htmlString = "<strong>안녕하세요</strong>, <em>홍길동</em>입니다.";
+
+    // innerHTML은 HTML 태그까지 파싱되어 반영됨
+    htmlDiv.innerHTML = htmlString;
+
+    // textContent는 태그를 단순한 텍스트로 처리함
+    textDiv.textContent = htmlString;
+  </script>
+
+</body>
+</html>
