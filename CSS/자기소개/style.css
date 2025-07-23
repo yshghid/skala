@@ -22,13 +22,14 @@ body {
   }
   
   section {
-    background-color: white;
     max-width: 800px;
     margin: 30px auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   }
+
+  
   
   h2 {
     color: #333;
@@ -132,3 +133,127 @@ body {
     }
   }
   
+/* 공통 애니메이션 초기 상태 */
+.animate-fade,
+.animate-slide-left,
+.animate-slide-right,
+.animate-slide-up,
+.animate-zoom-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+/* 화면에 보이면 활성화 */
+.animate-active {
+  opacity: 1;
+  transform: none;
+}
+
+/* 각각의 추가적인 transform 효과 (선택사항) */
+.animate-slide-left { transform: translateX(-50px); }
+.animate-slide-right { transform: translateX(50px); }
+.animate-slide-up { transform: translateY(50px); }
+.animate-zoom-in { transform: scale(0.8); }
+
+.animate-slide-left.animate-active,
+.animate-slide-right.animate-active,
+.animate-slide-up.animate-active,
+.animate-zoom-in.animate-active {
+  transform: none;
+}
+
+/* 공통 스타일 */
+section {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  /* Fade In-Out 반복 */
+  @keyframes fadeLoop {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  .infinite-fade {
+    animation-name: fadeLoop;
+  }
+  
+  /* 좌우 슬라이드 반복 */
+  @keyframes slideLeftRight {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-100px); }
+    75% { transform: translateX(100px); }
+  }
+  .infinite-slide-left {
+    animation-name: slideLeftRight;
+  }
+  
+  /* 오른쪽에서 왼쪽 반복 */
+  @keyframes slideRightLeft {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(100px); }
+    75% { transform: translateX(-100px); }
+  }
+  .infinite-slide-right {
+    animation-name: slideRightLeft;
+  }
+  
+  /* Zoom 반복 */
+  @keyframes zoomInOut {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.75); }
+  }
+  .infinite-zoom {
+    animation-name: zoomInOut;
+  }
+  
+  /* Bounce 위아래 */
+  @keyframes bounceUpDown {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-100px); }
+  }
+  .infinite-bounce {
+    animation-name: bounceUpDown;
+  }
+  
+  .section-intro {
+    background: linear-gradient(135deg, #f6d365, #fda085); /* 주황 */
+  }
+  
+  .section-hobby {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* 하늘 */
+  }
+  
+  .section-netflix {
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* 핑크-보라 */
+  }
+  
+  .section-blog {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f); /* 베이지-코랄 */
+  }
+  
+  .section-playlist {
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* 블루그레이 */
+  }
+  
+  
+  .section-contact {
+    animation: hueRotateLoop 10s linear infinite;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* 연보라-파랑 */
+    background-size: 200% 200%;
+    transition: all 1s ease;
+    color: white;
+}
+
+/* hue-rotate로 색감 변화 */
+@keyframes hueRotateLoop {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+#intro {
+    border: 2px dashed #ff8c00; /* 예시: 주황색 점선 테두리 */
+    padding: 35px; /* 여백 살짝 확대 */
+  }
