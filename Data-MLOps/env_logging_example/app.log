@@ -1,3 +1,8 @@
-2025-07-31 10:59:54,870 | INFO | [MyCoolApp] 앱 실행 시작
-2025-07-31 10:59:54,870 | DEBUG | 환경 변수 로딩 완료
-2025-07-31 10:59:54,870 | ERROR | 예외 발생 예시
+2025-08-12 17:13:40 [INFO] 앱 실행 시작
+2025-08-12 17:13:40 [DEBUG] 환경 변수 로딩 완료 (APP_NAME=MyCoolApp)
+2025-08-12 17:13:40 [ERROR] 예외 발생 예시
+Traceback (most recent call last):
+  File "/Users/yshmbid/Documents/home/github/Data-MLOps/env_logging_example/main.py", line 43, in main
+    1 / 0  # ZeroDivisionError
+    ~~^~~
+ZeroDivisionError: division by zero
