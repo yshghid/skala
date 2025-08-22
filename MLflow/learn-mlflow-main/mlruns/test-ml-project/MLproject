@@ -1,0 +1,12 @@
+name: my_mlflow_project
+
+# Use a Python virtual environment instead of Conda
+python_env: requirements.txt
+
+# Entry points define how the project can be run
+entry_points:
+  main:
+    parameters:
+      alpha: {type: float, default: 0.5}
+      l1_ratio: {type: float, default: 0.1}
+    command: "python train.py --alpha {alpha} --l1_ratio {l1_ratio}"
